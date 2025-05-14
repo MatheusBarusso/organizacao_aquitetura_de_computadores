@@ -1,0 +1,13 @@
+Configurado para Raspberry Pi com 3 threads
+Tamanho da matriz: 1000x1000
+
+Gerando matrizes aleatorias...
+Tempo para gerar matrizes: 0.111 segundos
+Multiplicando matrizes...
+Tempo para multiplicar matrizes: 2.256 segundos
+Calculando matriz inversa...
+Tempo para calcular inversa: 18.924 segundos
+
+Verificacao (elemento [0][0]): -2.3767
+
+Tempo total: 21.298 segundos

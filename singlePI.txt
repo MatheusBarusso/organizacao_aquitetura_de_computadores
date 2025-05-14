@@ -1,0 +1,10 @@
+Gerando matrizes aleatorias 1000x1000...
+Tempo para gerar matrizes: 0.194 segundos
+Multiplicando matrizes...
+Tempo para multiplicar matrizes: 5.804 segundos
+Calculando matriz inversa...
+Tempo para calcular inversa: 23.7 segundos
+
+Verificando inversa (elemento [0][0]): 0.583589
+
+Tempo total de execucao: 29.704 segundos
