@@ -3,7 +3,7 @@
 
 Este projeto busca analisar as diferenças de performance e tempo de execução para utilização de um Thread e múltiplos Threads. O algoritmo desenvolvido possui as seguintes funções:
 <ul>
-  <li>Gera duas matrizes 1000x1000 com números aleat´orios</li>
+  <li>Gera duas matrizes 1000x1000 com números aleatórios</li>
   <li>Multiplica essas duas matrizes</li>
   <li>Calcula a inversa da matriz resultante</li>
   <li>Mede a somatória de tempo gasto em cada uma das operações acima</li>
