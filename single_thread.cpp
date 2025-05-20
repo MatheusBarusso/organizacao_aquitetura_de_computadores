@@ -9,10 +9,8 @@
 using namespace std;
 using namespace std::chrono;
 
-// Alias para matriz como vector<vector<double>> para facilitar
 using Matrix = vector<vector<double>>;
 
-// Função para gerar uma matriz com valores aleatórios entre 0 e 1
 Matrix generateRandomMatrix(int rows, int cols) {
     random_device rd;
     mt19937 gen(rd());
@@ -27,7 +25,6 @@ Matrix generateRandomMatrix(int rows, int cols) {
     return matrix;
 }
 
-// Multiplicação otimizada de matrizes (ordem dos loops ajustada para melhor cache locality)
 Matrix multiplyMatrices(const Matrix& A, const Matrix& B) {
     int m = A.size();
     int n = A[0].size();
@@ -46,19 +43,15 @@ Matrix multiplyMatrices(const Matrix& A, const Matrix& B) {
     return result;
 }
 
-// Função para calcular a matriz inversa usando eliminação de Gauss-Jordan
 Matrix inverseMatrix(Matrix A) {
     int n = A.size();
     
-    // Criar matriz identidade
     Matrix inv(n, vector<double>(n, 0.0));
     for (int i = 0; i < n; ++i) {
         inv[i][i] = 1.0;
     }
     
-    // Eliminação de Gauss-Jordan
     for (int col = 0; col < n; ++col) {
-        // Pivotamento parcial: encontrar a linha com maior elemento na coluna atual
         int max_row = col;
         for (int row = col + 1; row < n; ++row) {
             if (abs(A[row][col]) > abs(A[max_row][col])) {
@@ -66,25 +59,21 @@ Matrix inverseMatrix(Matrix A) {
             }
         }
         
-        // Trocar linhas se necessário
         if (max_row != col) {
             swap(A[col], A[max_row]);
             swap(inv[col], inv[max_row]);
         }
         
-        // Verificar se a matriz é singular
         if (abs(A[col][col]) < 1e-10) {
             throw runtime_error("Matrix is singular or nearly singular");
         }
         
-        // Normalizar a linha atual
         double pivot = A[col][col];
         for (int j = 0; j < n; ++j) {
             A[col][j] /= pivot;
             inv[col][j] /= pivot;
         }
         
-        // Eliminar outras linhas
         for (int i = 0; i < n; ++i) {
             if (i != col && abs(A[i][col]) > 1e-10) {
                 double factor = A[i][col];
@@ -130,7 +119,6 @@ int main() {
              << duration_cast<milliseconds>(inv_end - mult_end).count() / 1000.0 
              << " segundos" << endl;
         
-        // Verificação rápida (opcional)
         cout << "\nVerificando inversa (elemento [0][0]): " << invC[0][0] << endl;
         
     } catch (const exception& e) {
