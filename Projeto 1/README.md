@@ -13,7 +13,7 @@ Este projeto busca analisar as diferenças de performance e tempo de execução 
 ```bash
 g++ -O3 single_thread.cpp -o single_thread
 ```
-###Aplicação Multi-Thread
+### Aplicação Multi-Thread
 ```bash
 g++ -std=c++11 -fopenmp -O3 multi_thread.cpp -o multi_thread
 ```
